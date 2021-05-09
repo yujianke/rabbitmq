@@ -48,5 +48,15 @@ public class RabbitMqApplicationTest {
             amqpTemplate.convertAndSend("spring-direct-ex","rongtingkey",message+i);
         }
     }
+    /**订阅模型-Topic*/
+    @Test
+    public void topic() throws InterruptedException {
+        String message ="topic message";
+        amqpTemplate.convertAndSend("spring-topic-ex","lxr.sb","no1消息");
+        amqpTemplate.convertAndSend("spring-topic-ex","lxr.pl","no2消息");
+        amqpTemplate.convertAndSend("spring-topic-ex","yjk.zs","no3消息");
+        amqpTemplate.convertAndSend("spring-topic-ex","yjk.lxr","no4消息");
+    }
+
 
 }
