@@ -40,6 +40,13 @@ public class RabbitMqApplicationTest {
         }
     }
 
-
+    /**订阅模型-Direct*/
+    @Test
+    public void direct() throws InterruptedException {
+        String message ="direct message";
+        for (int i = 0; i < 10; i++) {
+            amqpTemplate.convertAndSend("spring-direct-ex","rongtingkey",message+i);
+        }
+    }
 
 }
