@@ -1,8 +1,17 @@
 server:
-  port: 80001
+  port: 9002
 spring:
   rabbitmq:
     host: 192.168.44.130
     port: 5672
     username: guest
     password: guest
+    listener:
+      simple:
+        retry:
+          ## 开启消费者重试
+          enabled: true
+          ##最大重试次数（默认无数次）
+          max-attempts: 5 #配置消息队列的最大重试次数，不配置的话，一旦由于消费者里面的程序出错，就会不断的重试
+          ##重试间隔次数
+          initial-interval: 3000
