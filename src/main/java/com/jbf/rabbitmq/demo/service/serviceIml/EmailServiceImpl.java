@@ -19,6 +19,7 @@ public class EmailServiceImpl implements IEmailService {
     @Override
     public void sendEmailUtil(List<Email> emails) {
         System.out.println("接收到消息。。。。。。。");
+        //int i=1/0;测试重发
         System.out.println(emails);
     }
 
